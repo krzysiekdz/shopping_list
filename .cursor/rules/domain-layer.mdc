@@ -1,0 +1,12 @@
+---
+description: Shopping Lists — domain layer (pure Dart)
+globs: "**/domain/**/*.dart"
+alwaysApply: false
+---
+
+# Domain layer
+
+- **Pure Dart only:** no Flutter, Firebase, or `dart:ui` imports.
+- Contains **entities**, **repository interfaces**, and **use cases**.
+- **Errors:** Define domain `Failure` types; use cases return `Future<Either<Failure, T>>` (see fpdart rules in data layer).
+- **No** Firestore DTOs here — map at repository boundaries in `data`.

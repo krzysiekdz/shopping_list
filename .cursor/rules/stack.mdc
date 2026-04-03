@@ -1,0 +1,20 @@
+---
+description: Shopping Lists — stack, language, and global conventions
+alwaysApply: true
+---
+
+# Stack and global conventions
+
+- **Stack:** Flutter (stable), Firebase (Auth, Firestore, Storage, Analytics), BLoC (`flutter_bloc`) — **no Cubit**. fpdart (`Either`), Freezed + JsonSerializable, Clean Architecture per feature (`domain`, `data`, `presentation`).
+- **Dependencies:** Add packages to `pubspec.yaml` when you implement an area (`flutter_bloc`, `fpdart`, `freezed`, `json_serializable`, `hydrated_bloc`, `gap`, Firebase plugins, etc.).
+- **Language:** Code, identifiers, and comments in **English**. **UI strings and user-facing copy in Polish.**
+- **Typing:** Prefer strict types; avoid `dynamic`. Use `final` where values do not change.
+- **Style:** Effective Dart; prefer `const` where possible.
+- **File size:** Prefer under ~200 lines per file; split large widgets into private `_Widget` classes or new files.
+- **Docs:** `docs/PLAN.md`, `docs/FIRESTORE_SCHEMA.md`, `docs/AGENTS.md`; hard constraints also in root `.cursorrules` (pointer).
+
+## App-specific logic
+
+- **Inventory (Zapasy):** Usage bar from `daily_usage_rate` (or `dailyUsageRate`) and `last_updated_at` / `lastUpdatedAt` per schema.
+- **Locations:** User-defined names (e.g. kitchen, bathroom).
+- **Ads:** AdMob hooks only in presentation (placeholders acceptable until integrated).

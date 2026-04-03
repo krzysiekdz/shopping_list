@@ -1,0 +1,22 @@
+---
+description: Shopping Lists — presentation (BLoC, pages, widgets)
+globs: "**/presentation/**/*.dart"
+alwaysApply: false
+---
+
+# Presentation layer
+
+## BLoC
+
+- Use **`flutter_bloc` only** — **do not** introduce Cubit.
+- **Events and states:** sealed classes (Dart 3+); prefer **freezed** for immutability.
+- **Naming:** Events past tense (e.g. `InventoryItemAdded`, `AuthLogoutRequested`). States: `Initial`, `Loading`, `LoadSuccess`, `LoadFailure`, `ActionInProgress` as appropriate.
+- **Logic:** Business rules in blocs/use cases; widgets dispatch events and render state.
+- **Lists:** Use **hydrated_bloc** for shopping-list state to cut Firestore reads and support offline (when implemented).
+
+## UI
+
+- **Copy:** All user-visible strings in **Polish**.
+- **Theming:** `Theme.of(context)` for colors and text styles — no hardcoded hex colors in widgets.
+- **Layout:** Prefer **`gap`** (`Gap`) for spacing (add `gap` to `pubspec` when used).
+- **Widgets:** Prefer Material 3; keep widgets small and composable. Use `BlocBuilder` / `BlocListener` where state drives UI.

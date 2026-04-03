@@ -1,0 +1,5 @@
+# Shopping Lists — Cursor
+
+Detailed, scoped rules live in **`.cursor/rules/*.mdc`** (stack, domain, data, presentation).
+
+Also read **`docs/AGENTS.md`**, **`docs/PLAN.md`**, and **`docs/FIRESTORE_SCHEMA.md`** for product and data contracts.

@@ -1,0 +1,23 @@
+﻿# Flutter / Dart build outputs
+build/
+.dart_tool/
+
+# Native build caches (large; rarely edited by hand)
+**/android/.gradle/
+**/android/app/build/
+**/ios/Pods/
+**/ios/.symlinks/
+**/macos/Pods/
+
+# Coverage
+coverage/
+
+# IDE (optional; reduces noise in indexing)
+.idea/
+
+# Logs
+*.log
+
+# Uncomment to hide generated code from AI context (edit generated files less often)
+# *.g.dart
+# *.freezed.dart

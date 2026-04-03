@@ -1,0 +1,11 @@
+---
+description: Shopping Lists — data layer (Firebase, DTOs, repositories)
+alwaysApply: false
+---
+# Data layer
+
+- **Contents:** DTOs/models (`fromJson`/`toJson` or codegen), **remote/local data sources**, **repository implementations**.
+- **Firestore:** Use `withConverter<T>` for typed reads/writes. Prefer reads that match product needs; favor `get()` + cache when live `snapshots()` is not required (cost). Always thread **current `userId`** where rules require it.
+- **Errors:** Catch `FirebaseException` (and similar), map to domain **`Failure`**, expose **`Future<Either<Failure, T>>`** from repositories and use cases.
+- **Async:** Prefer `TaskEither` / `Either` chains from **fpdart** for async flows where it keeps code clear.
+- **Schema:** Stay aligned with `docs/FIRESTORE_SCHEMA.md`.
